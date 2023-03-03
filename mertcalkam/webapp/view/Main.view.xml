@@ -1,0 +1,30 @@
+<mvc:View controllerName="json.mertcalkam.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+         <content>
+            <Table items="{Wolfteam>/Characters}">
+                <columns>
+                    <Column>
+                        <Text text="Name" />
+                    </Column>
+                    <Column>
+                        <Text text="Health" />
+                    </Column>
+                    <Column>
+                        <Text text="Side" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem >
+                        <cells>
+                            <Text text="{Wolfteam>Name}" />
+                            <Text text="{Wolfteam>Health}" />
+                            <Text text="{Wolfteam>Side}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

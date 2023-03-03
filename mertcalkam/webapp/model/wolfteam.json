@@ -1,0 +1,29 @@
+{ 
+    "Characters": [{
+            "Name": "Pedro Gomez",
+            "Health": "200",
+            "Side": "Red"
+            
+        },
+        {
+            "Name": "Angela Mao",
+            "Health": "210",
+            "Side": "Blue"
+            
+        },
+        {
+            "Name": "Adriana Tenorio",
+            "Health": "230",
+            "Side": "Red"
+            
+        },
+        {
+            "Name": "Pedro Gomez",
+            "Health": "240",
+            "Side": "Blue"
+            
+        }
+
+    ]
+
+}
