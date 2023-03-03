@@ -1,0 +1,22 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+    xmlns:fb="sap.ui.comp.filterbar"
+>
+
+ <fb:FilterBar showClearOnFB="true" id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" afterVariantLoad=".onAfterVariantLoad">
+        <fb:filterItems>
+            <fb:FilterItem name="Name" label="Name">
+                <fb:control>
+                    <MultiComboBox selectionChange="handleSelectionChange" selectionFinish="handleSelectionFinish" width="" placeholder="Choose Character" required="true"  />
+                </fb:control>
+            </fb:FilterItem>
+            <fb:FilterItem name="Side" label="Side">
+                <fb:control>
+                    <MultiComboBox selectionChange="handleSelectionChange" selectionFinish="handleSelectionFinish" width="" placeholder="Select Side." required="true" />
+                </fb:control>
+            </fb:FilterItem>
+          
+        </fb:filterItems>
+    </fb:FilterBar>
+</c:FragmentDefinition>

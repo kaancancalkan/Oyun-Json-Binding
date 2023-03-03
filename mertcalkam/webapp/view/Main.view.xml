@@ -1,30 +1,16 @@
-<mvc:View controllerName="json.mertcalkam.controller.Main"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
+<mvc:View controllerName="json.mertcalkam.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:fb="sap.ui.comp.filterbar" xmlns:m="sap.m">
     <Page id="page" title="{i18n>title}">
-         <content>
-            <Table items="{Wolfteam>/Characters}">
-                <columns>
-                    <Column>
-                        <Text text="Name" />
-                    </Column>
-                    <Column>
-                        <Text text="Health" />
-                    </Column>
-                    <Column>
-                        <Text text="Side" />
-                    </Column>
-                </columns>
+        <content> 
+        <IconTabBar id="idIconTabBarNoIcons" expanded="{device>/isNoPhone}" class="sapUiResponsiveContentPadding">
                 <items>
-                    <ColumnListItem >
-                        <cells>
-                            <Text text="{Wolfteam>Name}" />
-                            <Text text="{Wolfteam>Health}" />
-                            <Text text="{Wolfteam>Side}" />
-                        </cells>
-                    </ColumnListItem>
+                    <IconTabFilter id="wolfteam" text="Wolfteam" key="info">
+                        <core:Fragment fragmentName="json.mertcalkam.Fragments.wolfteam" type="XML" />
+                    </IconTabFilter>
+
+                   
                 </items>
-            </Table>
+            </IconTabBar>
+           
         </content>
     </Page>
 </mvc:View>
