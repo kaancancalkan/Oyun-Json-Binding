@@ -1,9 +1,9 @@
 <c:FragmentDefinition
 	xmlns="sap.m" xmlns:c="sap.ui.core" xmlns:fb="sap.ui.comp.filterbar" xmlns:m="sap.m" xmlns:mvc="sap.ui.core.mvc"  xmlns:core="sap.ui.core" 
 	xmlns:u="sap.ui.unified">
->
+
 <core:Fragment fragmentName="json.mertcalkam.Fragments.wolfteamFilterBar" type="XML" />
- <Table items="{Wolfteam>/Characters}">
+ <Table items="{Wolfteam>/Characters}" id="charactersTable">
                 <columns>
                     <Column>
                         <Text text="Name" />

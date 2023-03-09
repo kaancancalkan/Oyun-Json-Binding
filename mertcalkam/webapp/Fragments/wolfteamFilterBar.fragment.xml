@@ -10,9 +10,9 @@
             </fb:FilterItem>
             <fb:FilterItem name="Side" label="Side">
                 <fb:control>
-                    <MultiComboBox selectionChange="handleSelectionChange" selectionFinish="handleSelectionFinish" width="" placeholder="Choose Side." required="true" items="{Wolfteam>/Characters}">
-                    <core:Item key="{Wolfteam>Side}" text="{Wolfteam>Side}" />
-                    </MultiComboBox>
+                    <MultiComboBox selectionChange="handleSelectionChange" selectionFinish="handleSelectionFinish" width="" placeholder="Choose Side." required="true" items="{ path: 'Wolfteam>/Characters', sorter: { path: 'Name' } }" >
+    <core:Item key="{Wolfteam>Side}" text="{Wolfteam>Side}" />
+</MultiComboBox>
                     
                 </fb:control>
             </fb:FilterItem>
