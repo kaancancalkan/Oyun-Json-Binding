@@ -28,14 +28,14 @@ sap.ui.define([
               
                 // Create a filter based on the selected side(s)
                 if (aSelectedSides.length > 0) {
-                  const oFilter = new sap.ui.model.Filter("Side", sap.ui.model.FilterOperator.EQ, aSelectedSides);
+                  const oFilter = new sap.ui.model.Filter("Side/Name", sap.ui.model.FilterOperator.EQ, aSelectedSides);
                   aFilters.push(oFilter);
                 }
               
                 // Apply filters to the binding
                 oBinding.filter(aFilters);
-                console.log("Alert")
-              }
+              },
+             
               
              
               
