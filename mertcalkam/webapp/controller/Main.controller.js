@@ -18,26 +18,45 @@ sap.ui.define([
 
 
             },
-            handleSelectionChange: function(oEvent) {
+            getAssignedFilters: function(filterItems) {
+                const assignedFilters = [];
+              
+                filterItems.forEach((item) => {
+                  if (item.isChecked) {
+                    assignedFilters.push(item);
+                  }
+                });
+              
+                return assignedFilters;
+              },
+            
+              onFilterChange: function(oEvent) {
                 const oTable = this.byId("charactersTable");
                 const oBinding = oTable.getBinding("items");
+                
+                // Create an array for all filter values
                 const aFilters = [];
-              
-                // Get the selected side(s) from the MultiComboBox
-                const aSelectedSides = oEvent.getSource().getSelectedKeys();
-              
-                // Create a filter based on the selected side(s)
-                if (aSelectedSides.length > 0) {
-                  const oFilter = new sap.ui.model.Filter("Side/Name", sap.ui.model.FilterOperator.EQ, aSelectedSides);
-                  aFilters.push(oFilter);
+                
+                // Get the filter data from the filter bar
+                const oFilterBar = this.byId("filterbar");
+                const aFilterData = oFilterBar.getFilterGroupItems();
+                
+                // Loop through the filter data and create filters
+                if (aFilterData.length > 0) {
+                  for (let i = 0; i < aFilterData.length; i++) {
+                    const oControl = aFilterData[i].getControl();
+                    const sValue = oControl.getValue();
+                    if (sValue) {
+                      const oFilter = new sap.ui.model.Filter(aFilterData[i].getKey(), sap.ui.model.FilterOperator.Contains, sValue);
+                      aFilters.push(oFilter);
+                    }
+                  }
                 }
-              
+                
                 // Apply filters to the binding
                 oBinding.filter(aFilters);
-              },
-             
-              
-             
+                console.log("F tEST")
+              }
               
               
               

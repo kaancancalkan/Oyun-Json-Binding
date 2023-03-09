@@ -2,18 +2,17 @@
     <fb:FilterBar showClearOnFB="true" id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" afterVariantLoad=".onAfterVariantLoad">
         <fb:filterItems>
             <fb:FilterItem name="Name" label="Name">
-                 <fb:control>
-    <MultiComboBox selectionChange="handleSelectionChange" selectionFinish="handleSelectionFinish" width="" placeholder="Choose Character" required="true" items="{Wolfteam>/Characters}">
-      <core:Item key="{Wolfteam>Name}" text="{Wolfteam>Name}" />
-    </MultiComboBox>
-  </fb:control>
+                <fb:control>
+                    <MultiComboBox selectionChange="handleSelectionChange" selectionFinish="handleSelectionFinish" width="" placeholder="Choose Character" required="true" items="{Wolfteam>/Characters}">
+                        <core:Item key="{Wolfteam>Name}" text="{Wolfteam>Name}" />
+                    </MultiComboBox>
+                </fb:control>
             </fb:FilterItem>
             <fb:FilterItem name="Side" label="Side">
                 <fb:control>
-                    <MultiComboBox selectionChange="handleSelectionChange" selectionFinish="handleSelectionFinish" width="" placeholder="Choose Side." required="true" items="{ path: 'Wolfteam>/Characters', sorter: { path: 'Name' } }" >
-    <core:Item key="{Wolfteam>Side}" text="{Wolfteam>Side}" />
-</MultiComboBox>
-                    
+                    <MultiComboBox selectionChange=".onFilterChange" width="100%" items="{path: 'Wolfteam>/Characters', sorter: { path: 'Side' }, templateShareable: true}">
+                        <core:Item key="{Wolfteam>Side}" text="{Wolfteam>Side}" />
+                    </MultiComboBox>
                 </fb:control>
             </fb:FilterItem>
         </fb:filterItems>
