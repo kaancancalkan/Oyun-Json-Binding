@@ -30,33 +30,19 @@ sap.ui.define([
                 return assignedFilters;
               },
             
-              onFilterChange: function(oEvent) {
-                const oTable = this.byId("charactersTable");
-                const oBinding = oTable.getBinding("items");
-                
-                // Create an array for all filter values
-                const aFilters = [];
-                
-                // Get the filter data from the filter bar
-                const oFilterBar = this.byId("filterbar");
-                const aFilterData = oFilterBar.getFilterGroupItems();
-                
-                // Loop through the filter data and create filters
-                if (aFilterData.length > 0) {
-                  for (let i = 0; i < aFilterData.length; i++) {
-                    const oControl = aFilterData[i].getControl();
-                    const sValue = oControl.getValue();
-                    if (sValue) {
-                      const oFilter = new sap.ui.model.Filter(aFilterData[i].getKey(), sap.ui.model.FilterOperator.Contains, sValue);
-                      aFilters.push(oFilter);
-                    }
-                  }
+              onFilterChange: function() {
+                var aFilters = [];
+                var aSelectedItems = this.byId("charactersTable").getSelectedItems();
+                for (var i = 0; i < aSelectedItems.length; i++) {
+                    var sPath = aSelectedItems[i].getKey();
+                    var sValue = aSelectedItems[i].getText();
+                    var oFilter = new sap.ui.model.Filter(sPath, sap.ui.model.FilterOperator.EQ, sValue);
+                    aFilters.push(oFilter);
                 }
-                
-                // Apply filters to the binding
+                var oTable = this.byId("charactersTable");
+                var oBinding = oTable.getBinding("items");
                 oBinding.filter(aFilters);
-                console.log("F tEST")
-              }
+            }
               
               
               
