@@ -30,15 +30,21 @@ sap.ui.define([
                 return assignedFilters;
               },
             
-              onFilterChange: function() {
+              onSearch: function() {
+                
                 var aFilters = [];
-                var aSelectedItems = this.byId("charactersTable").getSelectedItems();
+                var aSelectedItems = this.byId("wolfteamName").getSelectedItems();
                 for (var i = 0; i < aSelectedItems.length; i++) {
-                    var sPath = aSelectedItems[i].getKey();
-                    var sValue = aSelectedItems[i].getText();
-                    var oFilter = new sap.ui.model.Filter(sPath, sap.ui.model.FilterOperator.EQ, sValue);
+                    var sValue = aSelectedItems[i].getKey();
+                    var oFilter = new sap.ui.model.Filter("Name", sap.ui.model.FilterOperator.EQ, sValue);
                     aFilters.push(oFilter);
                 }
+               /* var aSelectedItems = this.byId("wolfteamName").getSelectedItems();
+                for (var i = 0; i < aSelectedItems.length; i++) {
+                    var sValue = aSelectedItems[i].getKey();
+                    var oFilter = new sap.ui.model.Filter("Name", sap.ui.model.FilterOperator.EQ, sValue);
+                    aFilters.push(oFilter);
+                }*/
                 var oTable = this.byId("charactersTable");
                 var oBinding = oTable.getBinding("items");
                 oBinding.filter(aFilters);
