@@ -39,12 +39,12 @@ sap.ui.define([
                     var oFilter = new sap.ui.model.Filter("Name", sap.ui.model.FilterOperator.EQ, sValue);
                     aFilters.push(oFilter);
                 }
-               /* var aSelectedItems = this.byId("wolfteamName").getSelectedItems();
-                for (var i = 0; i < aSelectedItems.length; i++) {
-                    var sValue = aSelectedItems[i].getKey();
-                    var oFilter = new sap.ui.model.Filter("Name", sap.ui.model.FilterOperator.EQ, sValue);
+                var a2SelectedItems = this.byId("wolfteamSide").getSelectedItems();
+                for (var i = 0; i < a2SelectedItems.length; i++) {
+                    var sValue = a2SelectedItems[i].getKey();
+                    var oFilter = new sap.ui.model.Filter("Side", sap.ui.model.FilterOperator.EQ, sValue);
                     aFilters.push(oFilter);
-                }*/
+                }
                 var oTable = this.byId("charactersTable");
                 var oBinding = oTable.getBinding("items");
                 oBinding.filter(aFilters);
