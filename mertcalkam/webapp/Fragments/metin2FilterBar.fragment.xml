@@ -1,4 +1,51 @@
 <c:FragmentDefinition xmlns="sap.m" xmlns:c="sap.ui.core" xmlns:fb="sap.ui.comp.filterbar" xmlns:core="sap.ui.core">
-
-
+    <fb:FilterBar showClearOnFB="true" id="filterbar2" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" afterVariantLoad=".onAfterVariantLoad">
+        <fb:filterItems>
+            <fb:FilterItem name="Name" label="Name">
+                <fb:control>
+                    <MultiComboBox
+                        id="Metin2Name"
+                        selectionChange="handleSelectionChange"
+                        selectionFinish="handleSelectionFinish"
+                        width=""
+                        placeholder="Choose Character"
+                        required="true"
+                        items="{ path: 'Metin2>/Characters', templateShareable: true, sorter: { path: 'Name' }, parameters: {distinct: true}}"
+                    >
+                        <core:Item key="{Metin2>Name}" text="{Metin2>Name}" />
+                    </MultiComboBox>
+                </fb:control>
+            </fb:FilterItem>
+             <fb:FilterItem name="Health" label="Health">
+                <fb:control>
+                    <MultiComboBox
+                        id="Metin2Health"
+                        selectionChange="handleSelectionChange"
+                        selectionFinish="handleSelectionFinish"
+                        width=""
+                        placeholder="Choose Health"
+                        required="true"
+                        items="{ path: 'Metin2>/Characters', templateShareable: true, sorter: { path: 'Name' }, parameters: {distinct: true}}"
+                    >
+                        <core:Item key="{Metin2>Health}" text="{Metin2>Health}" />
+                    </MultiComboBox>
+                </fb:control>
+            </fb:FilterItem>
+            <fb:FilterItem name="Side" label="Side">
+                <fb:control>
+                    <MultiComboBox
+                        id="Metin2Side"
+                        selectionChange="handleSelectionChange"
+                        selectionFinish="handleSelectionFinish"
+                        width=""
+                        placeholder="Choose Side"
+                        required="true"
+                        items="{ path: 'Metin2>/Characters', templateShareable: true, sorter: { path: 'Name' }, parameters: {distinct: true}}"
+                    >
+                        <core:Item key="{Metin2>Side}" text="{Metin2>Side}" />
+                    </MultiComboBox>
+                </fb:control>
+            </fb:FilterItem>
+        </fb:filterItems>
+    </fb:FilterBar>
 </c:FragmentDefinition>

@@ -18,15 +18,15 @@
             </fb:FilterItem>
             <fb:FilterItem name="Health" label="Health">
                 <fb:control>
-                    <MultiComboBox     id="wolfteamHealth" width="100%" items="{path: 'Wolfteam>/Characters', sorter: { path: 'Health' }, templateShareable: true, parameters: {distinct: true}}">
-                        <core:Item key="{Wolfteam>Health}" text="{Wolfteam>Health}" />
+                    <MultiComboBox     id="wolfteamHealth" width="100%" placeholder="Choose Health" items="{path: 'Wolfteam>/Characters', sorter: { path: 'Health' }, templateShareable: true, parameters: {distinct: true}}">
+                        <core:Item key="{Wolfteam>Health}" text="{Wolfteam>Health}"   />
                     </MultiComboBox>
                 </fb:control>
             </fb:FilterItem>
             <fb:FilterItem name="Side" label="Side">
                 <fb:control>
-                    <MultiComboBox id="wolfteamSide" width="100%" items="{path: 'Wolfteam>/Characters', sorter: { path: 'Side' }, templateShareable: true}">
-                        <core:Item key="{Wolfteam>Side}" text="{Wolfteam>Side}" />
+                    <MultiComboBox id="wolfteamSide" width="100%" placeholder="Choose Side" items="{path:  'Wolfteam>/Characters', sorter: { path: 'Side' }, templateShareable: true}">
+                        <core:Item key="{Wolfteam>Side}" text="{Wolfteam>Side}"   />
                     </MultiComboBox>
                 </fb:control>
             </fb:FilterItem>

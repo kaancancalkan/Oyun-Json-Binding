@@ -35,6 +35,7 @@ sap.ui.define([
                 
                 
                 var aFilters = [];
+                var aFilters2 = [];
                 var aSelectedItems = this.byId("wolfteamName").getSelectedItems();
                 for (var i = 0; i < aSelectedItems.length; i++) {
                     var sValue = aSelectedItems[i].getKey();
@@ -54,9 +55,13 @@ sap.ui.define([
                     aFilters.push(oFilter);
                 }
                 
+                
                 var oTable = this.byId("charactersTable");
+                var oTable2= this.byId("charactersTable2");
                 var oBinding = oTable.getBinding("items");
+                var oBinding2 = oTable2.getBinding("items")
                 oBinding.filter(aFilters);
+                oBinding2.filter(aFilters2);
             },
             
               
