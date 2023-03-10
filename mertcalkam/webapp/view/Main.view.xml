@@ -3,6 +3,9 @@
         <content> 
         <IconTabBar id="idIconTabBarNoIcons" expanded="{device>/isNoPhone}" class="sapUiResponsiveContentPadding">
                 <items>
+                 <IconTabFilter id="metin2" text="Metin2" key="info">
+                        <core:Fragment fragmentName="json.mertcalkam.Fragments.metin2" type="XML" />
+                    </IconTabFilter>
                     <IconTabFilter id="wolfteam" text="Wolfteam" key="info">
                         <core:Fragment fragmentName="json.mertcalkam.Fragments.wolfteam" type="XML" />
                     </IconTabFilter>

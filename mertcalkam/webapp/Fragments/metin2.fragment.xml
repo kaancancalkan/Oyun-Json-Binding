@@ -1,0 +1,28 @@
+<c:FragmentDefinition
+	xmlns="sap.m" xmlns:c="sap.ui.core" xmlns:fb="sap.ui.comp.filterbar" xmlns:m="sap.m" xmlns:mvc="sap.ui.core.mvc"  xmlns:core="sap.ui.core" 
+	xmlns:u="sap.ui.unified">
+
+<core:Fragment fragmentName="json.mertcalkam.Fragments.metin2FilterBar" type="XML" />
+    <Table items="{Metin2>/Characters}" id="charactersTable2">
+                <columns>
+                    <Column>
+                        <Text text="Name" />
+                    </Column>
+                    <Column>
+                        <Text text="Health" />
+                    </Column>
+                    <Column>
+                        <Text text="Side" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{Metin2>Name}" />
+                            <Text text="{Metin2>Health}" />
+                            <Text text="{Metin2>Side}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+</c:FragmentDefinition>
