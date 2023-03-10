@@ -22,7 +22,20 @@
             "Health": "240",
             "Side": "Blue"
             
+        },
+        {
+            "Name": "Reinhard Schneider ",
+            "Health": "200",
+            "Side": "Blue"
+            
+        },
+        {
+            "Name": "Geremi Song ",
+            "Health": "240",
+            "Side": "Red"
+            
         }
+
 
     ]
 

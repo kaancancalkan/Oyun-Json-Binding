@@ -45,6 +45,13 @@ sap.ui.define([
                     var oFilter = new sap.ui.model.Filter("Side", sap.ui.model.FilterOperator.EQ, sValue);
                     aFilters.push(oFilter);
                 }
+                var a3SelectedItems = this.byId("wolfteamHealth").getSelectedItems();
+                for (var i = 0; i < a3SelectedItems.length; i++) {
+                    var sValue = a3SelectedItems[i].getKey();
+                    var oFilter = new sap.ui.model.Filter("Health", sap.ui.model.FilterOperator.EQ, sValue);
+                    aFilters.push(oFilter);
+                }
+                
                 var oTable = this.byId("charactersTable");
                 var oBinding = oTable.getBinding("items");
                 oBinding.filter(aFilters);
