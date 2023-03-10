@@ -12,8 +12,9 @@ sap.ui.define([
             onInit: function () {
                 var oModel = this.getOwnerComponent().getModel("Wolfteam");
                 oModel.loadData(sap.ui.require.toUrl("json/mertcalkam/model/wolfteam.json"));
-
                 
+                var oModel2 = this.getOwnerComponent().getModel("Metin2")
+                oModel2.loadData(sap.ui.require.toUrl("json/mertcalkam/model/metin2.json"))
 
 
 
@@ -31,6 +32,7 @@ sap.ui.define([
               },
             
               onSearch: function() {
+                
                 
                 var aFilters = [];
                 var aSelectedItems = this.byId("wolfteamName").getSelectedItems();
@@ -55,7 +57,8 @@ sap.ui.define([
                 var oTable = this.byId("charactersTable");
                 var oBinding = oTable.getBinding("items");
                 oBinding.filter(aFilters);
-            }
+            },
+            
               
               
               

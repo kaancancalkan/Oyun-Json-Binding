@@ -3,14 +3,22 @@
         <fb:filterItems>
             <fb:FilterItem name="Name" label="Name">
                 <fb:control>
-                    <MultiComboBox id="wolfteamName" selectionChange="handleSelectionChange" selectionFinish="handleSelectionFinish" width="" placeholder="Choose Character" required="true" items="{Wolfteam>/Characters}">
+                    <MultiComboBox
+                        id="wolfteamName"
+                        selectionChange="handleSelectionChange"
+                        selectionFinish="handleSelectionFinish"
+                        width=""
+                        placeholder="Choose Character"
+                        required="true"
+                        items="{ path: 'Wolfteam>/Characters', templateShareable: true, sorter: { path: 'Name' }, parameters: {distinct: true}}"
+                    >
                         <core:Item key="{Wolfteam>Name}" text="{Wolfteam>Name}" />
                     </MultiComboBox>
                 </fb:control>
             </fb:FilterItem>
             <fb:FilterItem name="Health" label="Health">
                 <fb:control>
-                    <MultiComboBox id="wolfteamHealth" width="100%" items="{path: 'Wolfteam>/Characters', sorter: { path: 'Health' }, templateShareable: true}">
+                    <MultiComboBox     id="wolfteamHealth" width="100%" items="{path: 'Wolfteam>/Characters', sorter: { path: 'Health' }, templateShareable: true, parameters: {distinct: true}}">
                         <core:Item key="{Wolfteam>Health}" text="{Wolfteam>Health}" />
                     </MultiComboBox>
                 </fb:control>

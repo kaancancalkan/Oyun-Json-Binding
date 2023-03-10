@@ -60,7 +60,10 @@
       },
       "Wolfteam": {
         "type": "sap.ui.model.json.JSONModel"
-        }
+        },
+        "Metin2": {
+          "type": "sap.ui.model.json.JSONModel"
+          }
      
 
     },

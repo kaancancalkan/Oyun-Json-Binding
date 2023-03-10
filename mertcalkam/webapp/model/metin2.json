@@ -1,0 +1,31 @@
+{ 
+    "Characters": [{
+            "Name": "Shaman",
+            "Health": "2000",
+            "Side": "Red"
+            
+        },
+        {
+            "Name": "Ninja",
+            "Health": "1800",
+            "Side": "Blue"
+            
+        },
+        {
+            "Name": "Warrior",
+            "Health": "2500",
+            "Side": "Red"
+            
+        },
+        {
+            "Name": "Sura",
+            "Health": "2200",
+            "Side": "Yellow"
+            
+        }
+       
+
+
+    ]
+
+}
