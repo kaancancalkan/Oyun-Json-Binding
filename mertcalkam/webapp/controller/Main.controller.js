@@ -54,7 +54,25 @@ sap.ui.define([
                     var oFilter = new sap.ui.model.Filter("Health", sap.ui.model.FilterOperator.EQ, sValue);
                     aFilters.push(oFilter);
                 }
-                
+                var a4SelectedItems = this.byId("Metin2Name").getSelectedItems();
+                for (var i = 0; i < a4SelectedItems.length; i++) {
+                    var sValue = a4SelectedItems[i].getKey();
+                    var oFilter = new sap.ui.model.Filter("Name", sap.ui.model.FilterOperator.EQ, sValue);
+                    aFilters2.push(oFilter);
+                }
+                var a5SelectedItems = this.byId("Metin2Side").getSelectedItems();
+                for (var i = 0; i < a5SelectedItems.length; i++) {
+                    var sValue = a5SelectedItems[i].getKey();
+                    var oFilter = new sap.ui.model.Filter("Side", sap.ui.model.FilterOperator.EQ, sValue);
+                    aFilters2.push(oFilter);
+                }
+                var a6SelectedItems = this.byId("Metin2Health").getSelectedItems();
+                for (var i = 0; i < a6SelectedItems.length; i++) {
+                    var sValue = a6SelectedItems[i].getKey();
+                    var oFilter = new sap.ui.model.Filter("Health", sap.ui.model.FilterOperator.EQ, sValue);
+                    aFilters2.push(oFilter);
+                }
+              
                 
                 var oTable = this.byId("charactersTable");
                 var oTable2= this.byId("charactersTable2");
