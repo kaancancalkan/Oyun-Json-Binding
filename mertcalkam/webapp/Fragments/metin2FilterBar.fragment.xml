@@ -1,5 +1,5 @@
 <c:FragmentDefinition xmlns="sap.m" xmlns:c="sap.ui.core" xmlns:fb="sap.ui.comp.filterbar" xmlns:core="sap.ui.core">
-    <fb:FilterBar showClearOnFB="true" id="filterbar2" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" afterVariantLoad=".onAfterVariantLoad">
+    <fb:FilterBar showClearOnFB="true" id="filterbar2" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" clear="ClearFilterbar" filterChange=".onFilterChange" afterVariantLoad=".onAfterVariantLoad">
         <fb:filterItems>
             <fb:FilterItem name="Name" label="Name">
                 <fb:control>

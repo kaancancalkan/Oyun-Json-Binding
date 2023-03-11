@@ -82,7 +82,11 @@ sap.ui.define([
                 oBinding2.filter(aFilters2);
             },
             
-              
+            ClearFilterbar: function(){
+                var oFilterBar = this.byId("filterbar"); 
+                var oFilterBar2= this.byId("filterbar2");
+                oFilterBar.clear()
+            }
               
               
               
