@@ -85,7 +85,10 @@ sap.ui.define([
             ClearFilterbar: function(){
                 var oFilterBar = this.byId("filterbar"); 
                 var oFilterBar2= this.byId("filterbar2");
-                oFilterBar.clear()
+                oFilterBar.clearVariantSelection();
+                oFilterBar2.clearVariantSelection();
+                console.log(oFilterBar)
+                
             }
               
               
