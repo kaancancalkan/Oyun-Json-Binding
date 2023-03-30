@@ -64,7 +64,7 @@ sap.ui.define(
           );
           aFilters.push(oFilter);
         }
-        /*
+        
         var a4SelectedItems = this.byId("Metin2Name").getSelectedItems();
         for (var i = 0; i < a4SelectedItems.length; i++) {
           var sValue = a4SelectedItems[i].getKey();
@@ -74,9 +74,9 @@ sap.ui.define(
             sValue
           );
           aFilters2.push(oFilter);
-        }*/
+        }
         
-        var a4SelectedItems = oFilterModel.getProperty("/Names")
+       /* var a4SelectedItems = oFilterModel.getProperty("/Names")
         for (var i = 0; i < a4SelectedItems.length; i++) {
           var sValue = a4SelectedItems[i];
           var oFilter = new sap.ui.model.Filter(
@@ -85,7 +85,7 @@ sap.ui.define(
             sValue
           );
           aFilters2.push(oFilter);
-        }
+        } */
         
         var a5SelectedItems = this.byId("Metin2Side").getSelectedItems();
         for (var i = 0; i < a5SelectedItems.length; i++) {
@@ -97,16 +97,28 @@ sap.ui.define(
           );
           aFilters2.push(oFilter);
         }
-        var a6SelectedItems = this.byId("Metin2Health").getSelectedItems();
+         var a6SelectedItems = this.byId("Metin2Health").getSelectedItems();
+         for (var i = 0; i < a6SelectedItems.length; i++) {
+           var sValue = a6SelectedItems[i].getKey();
+           var oFilter = new sap.ui.model.Filter(
+             "Health",
+             sap.ui.model.FilterOperator.EQ,
+            sValue
+           );
+          aFilters2.push(oFilter);
+         }
+
+        /* var a6SelectedItems = oFilterModel.getProperty("/Healths")
         for (var i = 0; i < a6SelectedItems.length; i++) {
-          var sValue = a6SelectedItems[i].getKey();
+          var sValue = a6SelectedItems[i];
           var oFilter = new sap.ui.model.Filter(
-            "Health",
+            "Name",
             sap.ui.model.FilterOperator.EQ,
             sValue
           );
           aFilters2.push(oFilter);
         }
+        */
 
         var oTable = this.byId("charactersTable");
         var oTable2 = this.byId("charactersTable2");
@@ -120,6 +132,8 @@ sap.ui.define(
         //Metin2>/Characters
         var oFilterModel = this.getView().getModel("Filter");
         oFilterModel.setProperty("/Names", []);
+        oFilterModel.setProperty("/Healths", []);
+        oFilterModel.setProperty("/Sides", [])
 
         //         var DeleteValues = [
         //           aSelectedItems,

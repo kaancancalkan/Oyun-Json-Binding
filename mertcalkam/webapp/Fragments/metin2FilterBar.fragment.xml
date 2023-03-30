@@ -27,6 +27,7 @@
                         placeholder="Choose Health"
                         required="true"
                         items="{ path: 'Metin2>/Characters', templateShareable: true, sorter: { path: 'Name' }, parameters: {distinct: true}}"
+                          selectedKeys="{Filter>/Healths}"
                     >
                         <core:Item key="{Metin2>Health}" text="{Metin2>Health}" />
                     </MultiComboBox>
@@ -42,6 +43,7 @@
                         placeholder="Choose Side"
                         required="true"
                         items="{ path: 'Metin2>/Characters', templateShareable: true, sorter: { path: 'Name' }, parameters: {distinct: true}}"
+                        selectedKeys="{Filter>/Sides}"
                     >
                         <core:Item key="{Metin2>Side}" text="{Metin2>Side}" />
                     </MultiComboBox>
