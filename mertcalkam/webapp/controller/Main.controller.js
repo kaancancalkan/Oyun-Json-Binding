@@ -31,6 +31,7 @@ sap.ui.define(
       },
 
       onSearch: function () {
+        var oFilterModel = this.getView().getModel("Filter");
         var aFilters = [];
         var aFilters2 = [];
         var aSelectedItems = this.byId("wolfteamName").getSelectedItems();
@@ -63,6 +64,7 @@ sap.ui.define(
           );
           aFilters.push(oFilter);
         }
+        /*
         var a4SelectedItems = this.byId("Metin2Name").getSelectedItems();
         for (var i = 0; i < a4SelectedItems.length; i++) {
           var sValue = a4SelectedItems[i].getKey();
@@ -72,7 +74,19 @@ sap.ui.define(
             sValue
           );
           aFilters2.push(oFilter);
+        }*/
+        
+        var a4SelectedItems = oFilterModel.getProperty("/Names")
+        for (var i = 0; i < a4SelectedItems.length; i++) {
+          var sValue = a4SelectedItems[i];
+          var oFilter = new sap.ui.model.Filter(
+            "Name",
+            sap.ui.model.FilterOperator.EQ,
+            sValue
+          );
+          aFilters2.push(oFilter);
         }
+        
         var a5SelectedItems = this.byId("Metin2Side").getSelectedItems();
         for (var i = 0; i < a5SelectedItems.length; i++) {
           var sValue = a5SelectedItems[i].getKey();
@@ -103,38 +117,46 @@ sap.ui.define(
       },
 
       ClearFilterbar: function () {
-        var DeleteValues = [
-          aSelectedItems,
-          a2SelectedItems,
-          a3SelectedItems,
-          a4SelectedItems,
-          a5SelectedItems,
-          a6SelectedItems,
-        ];
-        var toplam = 0;
-        for (let i = 0; i < DeleteValues.length; i++) {
-          toplam = array[i];
-        }
-        veri = toplam;
-        silinecekVeriler = [];
-        while (true) {
-                if (!veri) {
-                    break
-                }
-                silinecekVeriler.push(veri);
-        }
-        let index = 0;
-        while (index < silinecekVeriler.length) {
-            let veri = silinecekVeriler[index];
-            index++;
-}
-        var oFilterBar = this.byId("filterbar");
-        var oFilterBar2 = this.byId("filterbar2");
-        oFilterBar.clearVariantSelection();
-        oFilterBar2.clearVariantSelection();
-        aFilters.ClearFilterbar();
-        aFilters2.ClearFilterbar();
-        console.log(oFilterBar);
+        //Metin2>/Characters
+        var oFilterModel = this.getView().getModel("Filter");
+        oFilterModel.setProperty("/Names", []);
+
+        //         var DeleteValues = [
+        //           aSelectedItems,
+        //           a2SelectedItems,
+        //           a3SelectedItems,
+        //           a4SelectedItems,
+        //           a5SelectedItems,
+        //           a6SelectedItems,
+        //         ];
+        //         var toplam = 0;
+        //         for (let i = 0; i < DeleteValues.length; i++) {
+        //           toplam = array[i];
+        //         }
+        //         veri = toplam;
+        //         silinecekVeriler = [];
+        //         while (true) {
+        //                 if (!veri) {
+        //                     break
+        //                 }
+        //                 silinecekVeriler.push(veri);
+        //         }
+        //         let index = 0;
+        //         while (index < silinecekVeriler.length) {
+        //             let veri = silinecekVeriler[index];
+        //             index++;
+        // }
+        //         var oFilterBar = this.byId("filterbar");
+        //         var oFilterBar2 = this.byId("filterbar2");
+        //         oFilterBar.clearVariantSelection();
+        //         oFilterBar2.clearVariantSelection();
+        //         aFilters.ClearFilterbar();
+        //         aFilters2.ClearFilterbar();
+        //         console.log(oFilterBar);
+        // aFilters.clear()
+        // aFilters2.clear()
+        // oBinding.filter(aFilters);
+        // oBinding2.filter(aFilters2);
       },
     });
   }

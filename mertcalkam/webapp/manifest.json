@@ -63,7 +63,10 @@
         },
         "Metin2": {
           "type": "sap.ui.model.json.JSONModel"
-          }
+          },
+          "Filter": {
+            "type": "sap.ui.model.json.JSONModel"
+            }
      
 
     },

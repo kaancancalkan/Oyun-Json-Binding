@@ -11,6 +11,7 @@
                         placeholder="Choose Character"
                         required="true"
                         items="{ path: 'Metin2>/Characters', templateShareable: true, sorter: { path: 'Name' }, parameters: {distinct: true}}"
+                        selectedKeys="{Filter>/Names}"
                     >
                         <core:Item key="{Metin2>Name}" text="{Metin2>Name}" />
                     </MultiComboBox>
